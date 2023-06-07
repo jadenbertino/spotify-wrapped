@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Spotify Circular';
+  src: url('./assets/fonts/CircularSpotify/CircularSpotifyText-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+* {
+  font-family: "Spotify Circular", "sans-serif";
+}

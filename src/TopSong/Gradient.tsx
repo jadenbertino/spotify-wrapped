@@ -7,8 +7,9 @@ export const Gradient: React.FC<{
 	const frame = useCurrentFrame();
 	const { fps } = useVideoConfig();
 
-	const scrollDuration = 3 * fps;
-	const yOffset = (height / 2) * (frame / scrollDuration);
+	const scrollDuration = 4 * fps;
+  const yOffset = ((frame / scrollDuration) % 1) * height * 1.5;
+
 
 	return (
 		<>
