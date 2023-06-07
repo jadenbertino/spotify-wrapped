@@ -1,16 +1,28 @@
-import {Composition} from 'remotion';
-import {MyComposition} from './Composition';
+import { Composition } from 'remotion';
+import { Gradient } from './components/Gradient';
+import { Scene3 } from './compositions/Scene3';
 
 export const RemotionRoot: React.FC = () => {
+	const fps = 30;
+	const width = 1080;
+	const height = 1920;
 	return (
 		<>
 			<Composition
-				id="MyComp"
-				component={MyComposition}
-				durationInFrames={60}
-				fps={30}
-				width={1280}
-				height={720}
+				id="gradient"
+				component={Gradient}
+				width={width}
+				height={height}
+				durationInFrames={4 * fps}
+				fps={fps}
+			/>
+			<Composition
+				id="scene3"
+				component={Scene3}
+				width={width}
+				height={height}
+				durationInFrames={10 * fps}
+				fps={fps}
 			/>
 		</>
 	);
