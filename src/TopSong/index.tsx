@@ -12,7 +12,7 @@ import { Gradient } from './Gradient';
 import { Title } from './Title';
 import albumCover from './cover.jpeg'
 
-export const Scene3: React.FC<{
+export const TopSong: React.FC<{
 	song: string;
 	artist: string;
   cover: string;

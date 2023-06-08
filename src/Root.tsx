@@ -1,5 +1,5 @@
 import { Composition } from 'remotion';
-import { Scene3 } from './TopSong';
+import { TopSong } from './TopSong';
 
 export const RemotionRoot: React.FC = () => {
 	const fps = 30;
@@ -8,8 +8,8 @@ export const RemotionRoot: React.FC = () => {
 	return (
 		<>
 			<Composition
-				id="scene3"
-				component={Scene3}
+				id="TopSong"
+				component={TopSong}
 				width={width}
 				height={height}
 				durationInFrames={10 * fps}
