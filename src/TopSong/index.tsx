@@ -1,4 +1,3 @@
-import React from 'react';
 import {
 	AbsoluteFill,
 	interpolate,
@@ -10,14 +9,14 @@ import { Album } from './Album';
 import { Circle } from './Circle';
 import { Gradient } from './Gradient';
 import { Title } from './Title';
-import albumCover from './cover.jpeg'
 
-export const TopSong: React.FC<{
+interface TopSongProps {
 	song: string;
 	artist: string;
   cover: string;
-  // audio?:
-}> = ({ song = 'Time', artist = 'Free Nationals', cover = albumCover }) => {
+}
+
+export const TopSong = ({ song, artist, cover }: TopSongProps) => {
 	const frame = useCurrentFrame();
 	const { fps, width, height } = useVideoConfig();
 

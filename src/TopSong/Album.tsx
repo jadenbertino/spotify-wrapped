@@ -1,6 +1,9 @@
-import React from 'react';
+interface AlbumProps {
+  size: number;
+  cover: string;
+}
 
-export const Album: React.FC<{ size: number; cover: string; }> = ({ size, cover }) => {
+export const Album = ({ size, cover }: AlbumProps) => {
 	return (
 		<div
 			style={{

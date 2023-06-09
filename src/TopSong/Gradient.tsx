@@ -1,9 +1,9 @@
-import React from 'react';
 import { AbsoluteFill, useCurrentFrame, useVideoConfig } from 'remotion';
 
-export const Gradient: React.FC<{
-	height: number;
-}> = ({ height }) => {
+interface GradientProps {
+  height: number;
+}
+export const Gradient = ({ height }: GradientProps) => {
 	const frame = useCurrentFrame();
 	const { fps } = useVideoConfig();
 

@@ -1,14 +1,10 @@
-import React from 'react';
-
-export const Circle: React.FC<{
+interface CircleProps {
 	children?: React.ReactNode;
 	diameter: number;
 	style?: React.CSSProperties;
-}> = ({
-	children,
-	diameter,
-	style,
-}) => {
+}
+
+export const Circle = ({ children, diameter, style }: CircleProps) => {
 	return (
 		<div
 			style={{
