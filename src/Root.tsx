@@ -27,7 +27,7 @@ export const RemotionRoot = () => {
 				component={TopGenres}
 				width={width}
 				height={height}
-				durationInFrames={10 * fps}
+				durationInFrames={15 * fps}
 				fps={fps}
 			/>
 		</>

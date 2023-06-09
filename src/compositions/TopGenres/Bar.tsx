@@ -15,14 +15,14 @@ export const Bar = ({ style, rank, genre, endWidth }: BarProps) => {
   const { fps, width } = useVideoConfig();
   const frame = useCurrentFrame();
 
-  const opacityDelay = (TOTAL_RANKS - rank) * 3 + 10
+  const opacityDelay = (TOTAL_RANKS - rank) * 4 + 20
   const opacity = interpolate(frame - opacityDelay, [0, 8], [0, 1]);
 
   const barSpring = spring({
-    frame: frame - (rank * 3) - 30,
+    frame: frame - (rank * 3 + 60),
     fps,
     config: {
-      damping: 200
+      damping: 200,
     }
   })
 
@@ -36,7 +36,7 @@ export const Bar = ({ style, rank, genre, endWidth }: BarProps) => {
   const barWidth = interpolate(barSpring, [0, 1], [BAR_HEIGHT, endWidth])
   
   const labelProgress = spring({
-    frame: frame - (rank * 25) - 40,
+    frame: frame - (rank * 30 + 80),
     fps,
     config: {
       damping: 200
@@ -60,7 +60,7 @@ export const Bar = ({ style, rank, genre, endWidth }: BarProps) => {
         height: `${BAR_HEIGHT}px`,
         borderRadius: `${BAR_HEIGHT / 2}px`,
         backgroundColor: '#fff',
-        marginTop: '16px',
+        marginTop: '24px',
         boxShadow: '0 0 4px rgba(0, 0, 0, 0.3)',
         width: `${barWidth}px`,
         opacity: opacity,
