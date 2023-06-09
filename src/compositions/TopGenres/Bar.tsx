@@ -25,6 +25,7 @@ export const Bar = ({ style, rank, genre, endWidth }: BarProps) => {
       damping: 200
     }
   })
+
   const leftStart = (width - BAR_HEIGHT) / 2;
   const leftOffset = interpolate(
     barSpring, 
@@ -33,6 +34,20 @@ export const Bar = ({ style, rank, genre, endWidth }: BarProps) => {
   )
 
   const barWidth = interpolate(barSpring, [0, 1], [BAR_HEIGHT, endWidth])
+  
+  const labelProgress = spring({
+    frame: frame - (rank * 25) - 40,
+    fps,
+    config: {
+      damping: 200
+    }
+  })
+
+  const genreTextSlide = interpolate(
+    labelProgress,
+    [0, 1],
+    [50, 0]
+  )
 
   return (
     <div className='bar-wrapper' style={{
@@ -59,7 +74,8 @@ export const Bar = ({ style, rank, genre, endWidth }: BarProps) => {
         fontSize: '40px',
         lineHeight: 1.5,
         textShadow: '0 0 4px rgba(0, 0, 0, 0.3)',
-        opacity: 0,
+        opacity: labelProgress,
+        transform: `translateY(${genreTextSlide}px)`
       }}>
         #{rank}<br />{genre}
       </p>
