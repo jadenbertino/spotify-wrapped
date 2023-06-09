@@ -1,33 +1,21 @@
 import { Composition } from 'remotion';
+import { Main } from './compositions/Main';
 import { TopGenres } from './compositions/TopGenres';
 import { TopSong } from './compositions/TopSong';
-import albumCover from './compositions/TopSong/cover.jpeg';
+
+const fps = 30;
+const width = 1080;
+const height = 1920;
 
 export const RemotionRoot = () => {
-	const fps = 30;
-	const width = 1080;
-	const height = 1920;
 	return (
 		<>
 			<Composition
-				id="TopSong"
-				component={TopSong}
+				id="Main"
+				component={Main}
 				width={width}
 				height={height}
-				durationInFrames={10 * fps}
-				fps={fps}
-				defaultProps={{
-					song: 'Time',
-					artist: 'Free Nationals',
-					cover: albumCover,
-				}}
-			/>
-			<Composition
-				id="TopGenres"
-				component={TopGenres}
-				width={width}
-				height={height}
-				durationInFrames={15 * fps}
+				durationInFrames={(10 + 25) * fps}
 				fps={fps}
 			/>
 		</>

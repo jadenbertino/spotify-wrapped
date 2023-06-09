@@ -7,14 +7,15 @@ import {
 } from 'remotion';
 import { Title } from '../../components/Title';
 import { CircleAndAlbum } from './CircleAndAlbum';
+import albumCover from './cover.jpeg';
 
 interface TopSongProps {
-	song: string;
-	artist: string;
-  cover: string;
+	song?: string;
+	artist?: string;
+  cover?: string;
 }
 
-export const TopSong = ({ song, artist, cover }: TopSongProps) => {
+export const TopSong = ({ song = 'Time', artist = 'Free Nationals', cover = albumCover }: TopSongProps) => {
 	const frame = useCurrentFrame();
 	const { fps } = useVideoConfig();
 
