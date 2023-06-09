@@ -5,7 +5,7 @@ import {
 	useCurrentFrame,
 	useVideoConfig,
 } from 'remotion';
-import { Title } from './Title';
+import { Title } from '../../components/Title';
 import { CircleAndAlbum } from './CircleAndAlbum';
 
 interface TopSongProps {
@@ -66,7 +66,7 @@ export const TopSong = ({ song, artist, cover }: TopSongProps) => {
 					transform: `translateY(${upAnimation}px)`,
 				}}
 			>
-				<Title style={{ opacity: topTextOpacity }}>
+				<Title style={{ opacity: topTextOpacity, top: '350px' }}>
 					One song helped you get <br /> through it all
 				</Title>
         <CircleAndAlbum cover={cover}/>

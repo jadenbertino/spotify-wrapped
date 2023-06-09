@@ -1,9 +1,11 @@
-import React, { CSSProperties } from 'react';
+import { CSSProperties } from 'react';
 
-export const Title: React.FC<{
+interface TitleProps {
 	children: React.ReactNode;
-	style: CSSProperties;
-}> = ({ children, style }) => {
+	style?: CSSProperties;
+}
+
+export const Title = ({ children, style }: TitleProps) => {
 	return (
 		<div
 			style={{
@@ -13,7 +15,6 @@ export const Title: React.FC<{
 				textAlign: 'center',
 				position: 'absolute',
 				width: '100%',
-				top: '350px',
 				textShadow: '0 0 6px rgba(0, 0, 0, 0.5)',
         ...style
 			}}

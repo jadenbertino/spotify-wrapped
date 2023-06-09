@@ -1,6 +1,7 @@
 import { Composition } from 'remotion';
-import { TopSong } from './TopSong';
-import albumCover from './TopSong/cover.jpeg';
+import { TopGenres } from './compositions/TopGenres';
+import { TopSong } from './compositions/TopSong';
+import albumCover from './compositions/TopSong/cover.jpeg';
 
 export const RemotionRoot = () => {
 	const fps = 30;
@@ -20,6 +21,14 @@ export const RemotionRoot = () => {
 					artist: 'Free Nationals',
 					cover: albumCover,
 				}}
+			/>
+			<Composition
+				id="TopGenres"
+				component={TopGenres}
+				width={width}
+				height={height}
+				durationInFrames={10 * fps}
+				fps={fps}
 			/>
 		</>
 	);

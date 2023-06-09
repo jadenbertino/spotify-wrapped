@@ -5,6 +5,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Spotify Circular';
+  src: url('./assets/fonts/CircularSpotify/CircularSpotifyText-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
 * {
   font-family: "Spotify Circular", "sans-serif";
 }
