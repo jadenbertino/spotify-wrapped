@@ -6,7 +6,7 @@ import {
 } from 'remotion';
 import { Album } from './Album';
 import { Circle } from './Circle';
-import { Gradient } from './Gradient';
+import { Gradient } from '../../components/Gradient';
 
 interface CircleCoverProps {
   cover: string;
